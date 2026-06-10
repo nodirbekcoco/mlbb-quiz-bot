@@ -3,7 +3,14 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 
 TOKEN = "8500343306:AAE1XJ9s7lFmR87cO_7HHWJHSP56E924ews"
 
-players = {}
+import json
+import os
+
+if os.path.exists("scores.json"):
+    with open("scores.json", "r", encoding="utf-8") as f:
+        players = json.load(f)
+else:
+    players = {}
 
 questions = [
     {
